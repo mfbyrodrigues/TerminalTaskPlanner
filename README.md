@@ -8,7 +8,7 @@ Compreender e aplicar os conceitos de **lista**, **pilha** e **fila** por meio d
 
 ---
 
-### 🛠️ Descrição da Atividade
+### 🛠️ Descrição da atividade
 
 Desenvolvimento de um programa de terminal que permite ao usuário:
 
@@ -19,7 +19,7 @@ Desenvolvimento de um programa de terminal que permite ao usuário:
 
 ---
 
-### 🧩 Estruturas Utilizadas
+### 🧩 Estruturas utilizadas
 
 - `Listas`: para armazenar todas as tarefas.
 - `Pilha (LIFO)`: para desfazer a última tarefa adicionada.
@@ -94,7 +94,7 @@ while True:
     - ➕ Adicione prioridade ou data à tarefa.
     - 💾 Faça com que o programa salve as tarefas em um arquivo `.txt`.
 
-### ✅ Critérios de Avaliação
+### ✅ Critérios de avaliação
 
 | Critério | Pontos |
 | --- | --- |

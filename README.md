@@ -85,8 +85,7 @@ while True:
         break
     else:
         print("Opção inválida!\n")
-
-
+```
 ### 📝 O que você deve fazer
 
 1. Copie e execute o código acima em seu ambiente Python.

@@ -1,6 +1,7 @@
 # 🧪 Atividade prática 
 
-## 📚 Matéria: Introdução à Estrutura de Dados com Python
+## 📚 Matéria: Introdução à Estrutura de Dados com Python - Semestre 3
+## Estudante: Maria Fernanda Rodrigues de Oliveira
 
 ### 🎯 Objetivo
 

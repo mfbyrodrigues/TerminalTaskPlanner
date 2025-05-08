@@ -88,6 +88,7 @@ while True:
         print("Opção inválida!\n")
 ```
 
+---
 
 ### 📝 O que você deve fazer
 
@@ -96,6 +97,8 @@ while True:
 3. Personalize o sistema:
     - ➕ Adicione prioridade ou data à tarefa.
     - 💾 Faça com que o programa salve as tarefas em um arquivo `.txt`.
+
+---
 
 ### ✅ Critérios de avaliação
 

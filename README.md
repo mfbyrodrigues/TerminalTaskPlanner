@@ -113,6 +113,6 @@ while True:
 
 ### 📅 Entrega
 
-📌 **Data limite**: *09 de maio*
+📌 **Data limite**: *09 de maio.*
 
 📩 **Forma de entrega**: envie o código e a explicação em PDF ou pelo repositório do GitHub.

@@ -1,7 +1,5 @@
 # 🧪 Atividade prática 
 
-## 📚 Introdução à Estrutura de Dados com Python
-
 ### 🎯 Objetivo
 
 Compreender e aplicar os conceitos de **lista**, **pilha** e **fila** por meio do desenvolvimento de uma **agenda de tarefas interativa** utilizando a linguagem **Python**.

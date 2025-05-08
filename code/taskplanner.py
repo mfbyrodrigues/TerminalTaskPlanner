@@ -1,12 +1,19 @@
 # Agenda de tarefas interativa
 
-tarefas = []            # Lista principal de tarefas, vazia (para ser preechida)
-historico = []          # Pilha para desfazer tarefas
-fila_execucao = []      # Fila para executar tarefas
+tarefas = []            # Lista principal de tarefas
+historico = []          # Pilha para armazenar tarefas de forma que a última inserida seja a primeira a ser removida
+fila_execucao = []      # Fila para armazenar tarefas que serão executadas na ordem em que foram inseridas.
 
 """
+    ANOTAÇÕES:
+
     tarefa → tarefa sem especificação.
-    tarefa_ completa → tarefa especificada: tarefa, prioridade e data.
+    tarefa_completa → tarefa especificada: tarefa, prioridade e data.
+    Imagens dos testes de cada estão na pasta "images"!
+
+    print() → Linha em branco para organização visual.
+    print ("\n")  → Duas linhas em branco para organização visual.
+
 """
 
 def adicionar_tarefa(): # Função para adicionar tarefas
@@ -40,31 +47,38 @@ def adicionar_tarefa(): # Função para adicionar tarefas
     fila_execucao.append(tarefa_completa)
     # Ou seja: "append" significa adicionar um item ao final de uma lista
 
-    print (f"Tarefa '{tarefa_completa['tarefa']}' adicionada com sucesso!") # Resposta ao usuário
-    print (f"Prioridade: {tarefa_completa['prioridade']} | Data: {tarefa_completa['data']}") # Resposta ao usuário
+    # Resposta ao usuário
+    print (f"Tarefa '{tarefa_completa['tarefa']}' adicionada com sucesso!") 
+    print (f"Prioridade: {tarefa_completa['prioridade']} | Data: {tarefa_completa['data']}") 
 
     salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter adicionado alguma tarefa
 
-def cumprir_ultima_tarefa(): # Função para remover a última tarefa que foi adicionada na lista,no estilo pilha (LIFO)
+def cumprir_ultima_tarefa(): # Função para remover a última tarefa que foi adicionada na lista no estilo pilha (LIFO)
+    # Verifica se há alguma tarefa no histórico para desfazer
     if historico:
-        ultima = historico.pop()
-        tarefas.remove(ultima)
-        fila_execucao.remove(ultima)
+        ultima = historico.pop() # Remove a última tarefa do histórico
+        tarefas.remove(ultima) # Remove a última tarefa da lista de tarefas
+        fila_execucao.remove(ultima) # Remove a última tarefa da fila de execução
 
         print (f"Tarefa '{ultima['tarefa']}' removida com sucesso! \n") # Resposta ao usuário
 
-        salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter desfeito alguma tarefa
+        salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter cumprido alguma tarefa
+
+    # Caso não haja nenhuma tarefa no histórico para desfazer
     else:
         print ("Ops... Nenhuma tarefa para desfazer. \n") # Resposta ao usuário
 
-def cumprir_primeira_tarefa(): # Função para remover a primeira tarefa que foi adicionada na lista, no estilo fila (FIFO)
+def cumprir_primeira_tarefa(): # Função para remover a primeira tarefa que foi adicionada na lista no estilo fila (FIFO)
+    # Verifica se há alguma tarefa na fila de execução para atender
     if fila_execucao:
-        feita = fila_execucao.pop(0)
-        tarefas.remove(feita)
+        feita = fila_execucao.pop(0) # Remove a primeira tarefa da fila de execução
+        tarefas.remove(feita) # Remove a primeira tarefa da lista de tarefas
 
         print (f"Tarefa '{feita['tarefa']}' removida com sucesso! \n") # Resposta ao usuário
 
-        salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter atendido alguma tarefa
+        salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter "cumprido" alguma tarefa
+    
+    # Caso não haja nenhuma tarefa na fila de execução para atender
     else:
         print ("Ops... Nenhuma tarefa para atender. \n") # Resposta ao usuário
 
@@ -73,6 +87,7 @@ def mostrar_tarefas(): # Função para mostrar as tarefas disponiveis
     print ("📋  Lista de tarefas:")
     print ()
 
+    # Laço de repetição que percorre a lista de tarefas e exibe cada tarefa com sua prioridade e data
     for i, t in enumerate(tarefas):
         print (f"{i + 1}. {t['tarefa']} | Prioridade: {t['prioridade']} | Data: {t['data']}") # Resposta ao usuário
 
@@ -81,14 +96,13 @@ def salvar_tarefas_txt(): # Função para salvar as tarefas no arquivo .txt semp
     arquivo = open ("tarefas.txt", "w", encoding = "utf-8")
     
     for t in tarefas:
-        # Escreve a tarefa seguida de uma nova linha, assim listando e fazendo registro
-        linha = (f"{t['tarefa']} | Prioridade: {t['prioridade']} | Data: {t['data']} \n")
-        arquivo.write(linha)
+        linha = (f"{t['tarefa']} | Prioridade: {t['prioridade']} | Data: {t['data']} \n") # Cria uma linha de texto com os dados da tarefa separados por "|"
+        arquivo.write(linha) # Escreve a linha da tarefa no arquivo
     
-    # Após escrever tudo que tinha, fecha o arquivo
+    # # Após escrever todas as tarefas, fecha o arquivo para salvar as alterações
     arquivo.close()
 
-while True: # Laço de repetição que fica mostrando as opções do menu enquanto o usuário vai escolhendo
+while True: # Laço de repetição que fica mostrando as opções do menu enquanto o usuário vai fazendo sua escolha
     
     # Menu de opções
     print()
@@ -106,19 +120,20 @@ while True: # Laço de repetição que fica mostrando as opções do menu enquan
     print()
     opcao = input ("Escolha uma opção: ") # Entrada de dados feita pelo usuário
     print()
-    
-    match opcao:
+
+    # Verifica qual opção o usuário escolheu e executa a função correspondente   
+    match opcao: 
         
         case '1':
-            adicionar_tarefa()
+            adicionar_tarefa() # Chama a função para adicionar uma nova tarefa
         case '2':
-            cumprir_ultima_tarefa()
+            cumprir_ultima_tarefa() # Chama a função para cumprir (remover) a última tarefa
         case '3':
-            cumprir_primeira_tarefa()
+            cumprir_primeira_tarefa() # Chama a função para cumprir (remover) a primeira tarefa
         case '4':
-            mostrar_tarefas()
+            mostrar_tarefas() # Chama a função para mostrar todas as tarefas cadastradas
         case '5':
-            print ("Programa encerrado ✓ \n") # Resposta ao usuário
-            break
+            print ("Programa encerrado ✓ \n") # Mensagem de encerramento para o usuário
+            break # Encerra o laço de repetição e finaliza o programa
         case _:
-            print ("Opção escolhida inválida! \n") # Resposta ao usuário
+            print ("Opção escolhida inválida! \n") # Mensagem de erro para opção inválida

@@ -25,6 +25,7 @@ Desenvolvimento de um programa de terminal que permite ao usuário:
 - `Pilha (LIFO)`: para desfazer a última tarefa adicionada.
 - `Fila (FIFO)`: para atender as tarefas na ordem de entrada.
 
+---
 
 ### 💻 Código base
 

@@ -1,12 +1,12 @@
 # 🧪 Atividade prática 
 
-### 🎯 Objetivo
+## 🎯 Objetivo
 
 Compreender e aplicar os conceitos de **lista**, **pilha** e **fila** por meio do desenvolvimento de uma **agenda de tarefas interativa** utilizando a linguagem **Python**.
 
 ---
 
-### 🛠️ Descrição da Atividade
+## 🛠️ Descrição da atividade
 
 Desenvolvimento de um programa de terminal que permite ao usuário:
 
@@ -17,7 +17,7 @@ Desenvolvimento de um programa de terminal que permite ao usuário:
 
 ---
 
-### 🧩 Estruturas Utilizadas
+## 🧩 Estruturas utilizadas
 
 - `Listas`: para armazenar todas as tarefas.
 - `Pilha (LIFO)`: para desfazer a última tarefa adicionada.

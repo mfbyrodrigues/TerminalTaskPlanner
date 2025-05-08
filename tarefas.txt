@@ -1,1 +1,3 @@
-ai | Prioridade: Alta | Data: 09/05/2025 
+Estudar | Prioridade: Alta | Data: 09/05/2025
+Treinar | Prioridade: Média | Data: 09/05/2025
+Organizar a playlist de numetal | Prioridade: Baixa | Data: 09/05/2025

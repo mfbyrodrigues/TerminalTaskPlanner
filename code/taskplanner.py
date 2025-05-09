@@ -62,7 +62,7 @@ def cumprir_ultima_tarefa(): # Função para remover a última tarefa que foi ad
 
         print (f"Tarefa '{ultima['tarefa']}' removida com sucesso! \n") # Resposta ao usuário
 
-        salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter cumprido alguma tarefa
+        salvar_tarefas_txt() # Só lembrando de salvar o arquivo depois de ter "cumprido" alguma tarefa
 
     # Caso não haja nenhuma tarefa no histórico para desfazer
     else:
@@ -92,7 +92,7 @@ def mostrar_tarefas(): # Função para mostrar as tarefas disponiveis
         print (f"{i + 1}. {t['tarefa']} | Prioridade: {t['prioridade']} | Data: {t['data']}") # Resposta ao usuário
 
 def salvar_tarefas_txt(): # Função para salvar as tarefas no arquivo .txt sempre que houver uma mudança na lista de tarefas
-    # Abre o arquivo em modo de escrita, especificando o processo de execução e a codificação (aceitando caracteres especiais)
+    # Abre o arquivo em modo de escrita (nome do arquivo: "tarefas.txt"), especificando o processo de execução ("w") e a codificação, aceitando caracteres especiais ("utf-8")
     arquivo = open ("tarefas.txt", "w", encoding = "utf-8")
     
     for t in tarefas:

@@ -2,7 +2,7 @@
 
 tarefas = []            # Lista principal de tarefas
 historico = []          # Pilha para armazenar tarefas de forma que a última inserida seja a primeira a ser removida
-fila_execucao = []      # Fila para armazenar tarefas que serão executadas na ordem em que foram inseridas
+fila_execucao = []      # Fila para armazenar tarefas que serão removidas na ordem em que foram inseridas
 
 """
     ANOTAÇÕES:

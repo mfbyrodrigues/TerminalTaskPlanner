@@ -2,7 +2,7 @@
 
 tarefas = []            # Lista principal de tarefas
 historico = []          # Pilha para armazenar tarefas de forma que a última inserida seja a primeira a ser removida
-fila_execucao = []      # Fila para armazenar tarefas que serão executadas na ordem em que foram inseridas.
+fila_execucao = []      # Fila para armazenar tarefas que serão executadas na ordem em que foram inseridas
 
 """
     ANOTAÇÕES:
@@ -121,7 +121,7 @@ while True: # Laço de repetição que fica mostrando as opções do menu enquan
     opcao = input ("Escolha uma opção: ") # Entrada de dados feita pelo usuário
     print()
 
-    # Verifica qual opção o usuário escolheu e executa a função correspondente   
+    # Verifica qual opção o usuário escolheu e executa a função correspondente
     match opcao: 
         
         case '1':
